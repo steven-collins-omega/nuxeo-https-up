@@ -4,6 +4,10 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/trusty64"
 
+  # ensure everyone is using the same box; we only update the version
+  # when we make a conscious decision to do so
+  config.vm.box_version = "= 20160222.0.0"
+
   # essential idea of following comes from juanje on github:
   # https://gist.github.com/juanje/3797297
   # This is like using vagrant-cachier except much more lightweight
