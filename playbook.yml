@@ -1,0 +1,7 @@
+- hosts: 127.0.0.1
+  connection: local
+  gather_facts: no
+  vars:
+    my_name: a_b_c
+  tasks:
+    - debug: msg={{ my_name|replace('_', '-') }}
