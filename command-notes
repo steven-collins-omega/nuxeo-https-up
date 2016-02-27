@@ -1,0 +1,6 @@
+#!/bin/true
+
+# At first this is just a place to note commands I ran. It is likely to
+# morph into an executable shell script.
+
+vagrant plugin install vagrant-cachier
