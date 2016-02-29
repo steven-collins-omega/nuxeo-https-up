@@ -1,0 +1,4 @@
+[submodule "nuxeo-tools-cloud"]
+	path = nuxeo-tools-cloud
+	url = ../nuxeo-tools-cloud
+	branch = postgres-moved
