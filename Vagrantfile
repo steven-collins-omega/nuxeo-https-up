@@ -1,5 +1,8 @@
 # Vagrantfile essentially due to Unizin
 
+# 1.8 needed for ansible-galaxy features
+Vagrant.require_version ">= 1.8.0"
+
 Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/trusty64"
@@ -23,12 +26,15 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "nuxeo-tools-cloud/ansible/nuxeo/deploy-cloud.yml"
+    nuxeo_dir = "nuxeo-tools-cloud/ansible/nuxeo/"
+    ansible.playbook = nuxeo_dir + "deploy-cloud.yml"
     ansible.groups = {
       "nuxeo" => ["default"],
       "db"    => ["default"],
       "cloud:children" => ["nuxeo", "db"]
     }
+    ansible.galaxy_role_file = nuxeo_dir + "galaxy_role_file.txt"
+    ansible.galaxy_roles_path = nuxeo_dir + "galaxy-roles"
     ansible.verbose = "vv"
   end
 
