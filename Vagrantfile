@@ -23,7 +23,13 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbook.yml"
+    ansible.playbook = "nuxeo-tools-cloud/ansible/nuxeo/deploy-cloud.yml"
+    ansible.groups = {
+      "nuxeo" => ["default"],
+      "db"    => ["default"],
+      "cloud:children" => ["nuxeo", "db"]
+    }
+    ansible.verbose = "vv"
   end
 
 end
