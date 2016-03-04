@@ -34,8 +34,6 @@ Vagrant.configure(2) do |config|
       "https" => ["default"],
       "cloud:children" => ["nuxeo", "db", "https"]
     }
-    ansible.galaxy_role_file = nuxeo_dir + "galaxy_role_file.txt"
-    ansible.galaxy_roles_path = "galaxy-roles"
     ansible.verbose = "vv"
   end
 
