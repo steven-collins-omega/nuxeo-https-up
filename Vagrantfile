@@ -35,7 +35,7 @@ Vagrant.configure(2) do |config|
       "cloud:children" => ["nuxeo", "db", "https"]
     }
     # ansible.tags = ["https"]
-    ansible.verbose = "vv"
+    # ansible.verbose = "vvv"
   end
 
 end
