@@ -34,6 +34,7 @@ Vagrant.configure(2) do |config|
       "https" => ["default"],
       "cloud:children" => ["nuxeo", "db", "https"]
     }
+    # ansible.tags = ["https"]
     ansible.verbose = "vv"
   end
 
