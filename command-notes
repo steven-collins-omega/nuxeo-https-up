@@ -1,9 +1,0 @@
-#!/bin/true
-
-# At first this is just a place to note commands I ran. It is likely to
-# morph into an executable shell script.
-
-# The following actually didn't work for me on first run. It seems to be
-# complaining about a missing header library, which strikes me as a rabbit
-# hole.
-# vagrant plugin install vagrant-cachier
